@@ -11,29 +11,36 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Using this package you can call the function (
+    exportToGoogleCalendar(
+    required String identifier,
+    required String summary,
+    required String description,
+    required DateTime startDateTime,
+    required String startTimeZone,
+    required DateTime endDateTime,
+    required String endTimeZone,))
+
+    With this function the user is preseted the screen to connect their google account for adding the event for the first time only . For each successful event added true is returned otherwise false is returned .
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+![login screen ](assets/screenshoot_1.png)
+
+![success screen ](assets/screenshoot_2.png)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+First of all , you need to create a project on the google cloud platform (https://console.cloud.google.com) and activate the Google Calendar API for the project to get the api keys .
 
 ## Usage
+First of all , you need to create a project on the google cloud platform (https://console.cloud.google.com) and activate the Google Calendar API for the project to get the api keys .
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
 
-```dart
-const like = 'sample';
+```
+bool result = await exportToGoogleCalendar(identifier:"ssecret key",summary:"event name",description:"event description",startDateTime:DateTime.now(),startTimeZone:"GMT+2:00",endDateTime:DateTime.now().add(Duration(hours:1)),endTimeZone:"GMT+2:00");
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+
